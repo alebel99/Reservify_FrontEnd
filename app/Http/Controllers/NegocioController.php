@@ -65,8 +65,12 @@ class NegocioController extends Controller
     public function store(Request $request){
         $nombreArchivo = $request->file('foto')->getClientOriginalName();
         $request->file('foto')->move(public_path('imagenes'), $nombreArchivo);
-
-        $response = Http::post('http://www.reservify.somee.com/api/Negocio/crearNegocio', [
+    
+        $response = Http::attach(
+            'foto',
+            file_get_contents(public_path('imagenes') . '/' . $nombreArchivo),
+            $nombreArchivo
+        )->post('http://www.reservify.somee.com/api/Negocio/crearNegocio', [
             'idUsuario' => $request->idUsuario,
             'categoria' => $request->categoria,
             'nombre' => $request->nombre,
@@ -74,14 +78,13 @@ class NegocioController extends Controller
             'horaApertura' => date('G', strtotime($request->horaApertura)),
             'horaCierre' => date('G', strtotime($request->horaCierre)),
             'descripcion' => $request->descripcion,
-            'foto' => $nombreArchivo
         ]);
-
+    
         $data = $response->json();
         $idNegocio = $data['idNegocio'];
-
+    
         session(['idNegocio' => $idNegocio]);
-
+    
         return redirect()->route('index_negocios')->with('success','¡Se creó tu negocio con éxito!');
     }
 

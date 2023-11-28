@@ -17,7 +17,7 @@
         @foreach ($negocios as $negocio)
             <div class="col">
                 <div class="card h-100">
-                    <img src="{{ asset('imagenes/' . $negocio['foto']) }}" class="card-img-top" height="200">
+                    <img src="{{ $negocio['foto'] }}" class="card-img-top" height="200">
                     <div class="card-body">
                         <h3 class="card-title">{{ $negocio['nombre'] }}</h3>
                         <br />
