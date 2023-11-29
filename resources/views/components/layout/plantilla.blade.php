@@ -17,7 +17,7 @@
         $usuario = session('usuario');
         $negocio = session('negocio')
     @endphp
-    <body style="background-color: rgb(250, 225, 204)">
+    <body style="background-color: rgb(117, 117, 117)">
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">

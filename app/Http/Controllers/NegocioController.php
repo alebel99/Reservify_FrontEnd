@@ -124,7 +124,11 @@ class NegocioController extends Controller
                 'descripcion' => $request->descripcion,
             ]);
         } else {
-            $response = Http::put('http://www.reservify.somee.com/api/Negocio/editarNegocio', [
+            $response = Http::attach(
+                'foto',
+                file_get_contents(public_path('imagenes') . '/' . 'logo.jpg'),
+                ''
+            )->put('http://www.reservify.somee.com/api/Negocio/editarNegocio', [
                 'idNegocio' => $request->idNegocio,
                 'categoria' => $request->categoria,
                 'nombre' => $request->nombre,

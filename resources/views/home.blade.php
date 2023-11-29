@@ -21,7 +21,6 @@
     <h3>Aquí podrás ver los negocios disponibles y agendar citas</h3>
     <br />
 
-
     <div class="row row-cols-1 row-cols-md-3 g-3">
 
         @foreach ($negocios as $negocio)
