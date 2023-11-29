@@ -8,7 +8,7 @@
 </head>
 <body style="background-color: rgb(250, 225, 204)">
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <img src="{{ asset('imagenes/logo_reservify.png') }}" alt="Icono" class="text-center" width="350px" height="350px" style="margin-right: 50px">
+        <img src="{{ asset('imagenes/logo.jpg') }}" alt="Icono" class="text-center" width="350px" height="350px" style="margin-right: 50px">
 
         <div class="card p-4">
             @if ($mensaje = Session::get('error'))

@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ asset('imagenes/logo_reservify.png') }}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    <img src="{{ asset('imagenes/logo.jpg') }}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                     Reservify
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

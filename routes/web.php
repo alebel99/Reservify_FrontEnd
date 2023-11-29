@@ -26,8 +26,8 @@ Route::get('/negocios', [NegocioController::class, 'index'])->name('index_negoci
 Route::get('/negocio/{id}', [NegocioController::class,'show'])->name('ver_negocio'); // Detalles de un negocio
 Route::get('/crear_negocio', [NegocioController::class, 'create'])->name('negocios.create'); // Vista para crear negocio
 Route::post('/crear_negocio/store', [NegocioController::class, 'store'])->name('negocios.store'); // Guardar negocio nuevo
-Route::post('/editar_negocio/{id}', [NegocioController::class, 'edit'])->name('negocios.editar'); //Editar negocio
-// ------------------
+Route::get('/editar_negocio/{id}', [NegocioController::class, 'edit'])->name('negocios.editar'); // Vista editar negocio
+Route::post('/editar_negocio/update', [NegocioController::class, 'update'])->name('update_negocio'); // Editar negocio
 Route::get('/negocio/citas/{id}', [NegocioController::class,'negocio_citas'])->name('citas_negocio'); // Citas de un negocio
 Route::get('/negocio/destroy/{idCita}/{idNegocio}', [NegocioController::class,'eliminar_cita'])->name('eliminar_cita_negocio'); // Eliminar cita del negocio
 

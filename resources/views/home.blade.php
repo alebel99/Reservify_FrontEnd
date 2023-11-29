@@ -6,6 +6,16 @@
                 {{ $mensaje }}
             </div>
         @endif
+        @if ($mensaje = Session::get('successEdit'))
+            <div class="alert alert-warning" role="alert">
+                {{ $mensaje }}
+            </div>
+        @endif
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
     </div>
     <h1>Reservify - Reserva fácil</h1>
     <h3>Aquí podrás ver los negocios disponibles y agendar citas</h3>
