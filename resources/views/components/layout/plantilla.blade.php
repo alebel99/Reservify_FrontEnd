@@ -25,12 +25,15 @@
                     Reservify
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ route('index_negocios') }}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="{{ Route('usuario_editar', $usuario)}}">Mi usuario</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-info" href="{{ Route('ver_citas_usuario', $usuario) }}">Mis citas</a>
@@ -44,13 +47,17 @@
                                 <a class="nav-link text-warning" href="{{ route('citas_negocio', $negocio) }}">Mi negocio</a>
                             </li>
                         @endif
-                        <li class="nav-item">
-                            <a class="nav-link text-danger" href="{{ Route('index') }}">Cerrar Sesión</a>
-                        </li>
                     </ul>
+                    <div class="ms-auto">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-danger" href="{{ Route('index') }}">Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-          </nav>
+        </nav>        
 
         <div class="container fluid">
             {{ $slot }}

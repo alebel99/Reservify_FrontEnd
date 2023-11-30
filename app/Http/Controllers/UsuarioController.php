@@ -56,56 +56,36 @@ class UsuarioController extends Controller
         }
     }
 
+    public function edit($idUsuario){
+        $response = Http::get('http://www.reservify.somee.com/api/Usuario/' . $idUsuario);
 
+        if ($response->successful()) {
+            $data = $response->json();
 
+            $usuario = $data['response'];
+        }
 
-
-
-
-
-
-
-
-
-    
-
-    public function store(Request $request){
-        $response = Http::post('http://apirest_reservify.test/api/usuarios',[
-            'es_propietario' => $request->es_propietario,
-            'id_negocio' => $request->id_negocio,
-            'nombre' => $request->nombre,
-            'apellido' => $request->apellido,
-            'correo' => $request->correo,
-            'direccion' => $request->direccion,
-            'contrasena' => $request->contrasena,
-            'fechanacimiento' => $request->fechanacimiento
-        ]);
-        return redirect()->route('usuarios.index')->with("success", "¡Usuario creado con éxito!");
-    }
-
-    public function show($idUsuario){
-        $response = Http::get('http://apirest_reservify.test/api/usuarios/'.$idUsuario);
-        $data = $response->json();
-        return view('usuarios_show', compact('data'));
+        return view('usuario.usuario_editar', compact('usuario'));
     }
 
     public function update(Request $request){
-        $response = Http::put('http://apirest_reservify.test/api/usuarios/'.$request->id, [
-            'es_propietario' => $request->es_propietario,
-            'id_negocio' => $request->id_negocio,
+        $response = Http::put('http://www.reservify.somee.com/api/Usuario/editarUsuario', [
+            'idUsuario' => $request->idUsuario,
+            'idNegocio' => $request->idNegocio,
             'nombre' => $request->nombre,
-            'apellido' => $request->apellido,
+            'apellidos' => $request->apellidos,
             'correo' => $request->correo,
-            'direccion' => $request->direccion,
-            'contrasena' => $request->contrasena,
-            'fechanacimiento' => $request->fechanacimiento
+            'pass' => $request->password,
+            'telefono' => $request->telefono
         ]);
-        
-        return redirect()->route('usuarios.index')->with("successEdit", "¡Usuario editado con éxito!");
-    }
 
-    public function destroy($idUsuario){
-        $response = Http::delete('http://apirest_reservify.test/api/usuarios/'.$idUsuario);
-        return redirect()->route('usuarios.index')->with("successDelete", "¡Usuario eliminado con éxito!");
+        if($response->successful()){
+            return redirect()->route('index_negocios')->with('success', '¡Se editó el usuario con éxito!');
+        } else {
+            $errorCode = $response->status(); // Código de estado HTTP
+            $errorMessage = $response->body(); // Mensaje de error
+
+            return redirect()->route('index_negocios')->with('error', "Error $errorCode: $errorMessage");
+        }
     }
 }

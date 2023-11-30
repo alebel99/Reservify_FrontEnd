@@ -38,13 +38,5 @@ Route::get('/editar_cita/{id}', [CitaController::class,'editar_cita'])->name('ed
 Route::post('/editar_cita/update', [CitaController::class, 'update'])->name('update_cita'); // Editar cita
 Route::get('/citas_usuario/destroy/{idCita}/{idUsuario}', [CitaController::class,'destroy'])->name('eliminar_cita'); // Eliminar cita
 
-
-//---------------------------------------------------------------------------------------------------------------------------------------------------
-Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
-Route::post('/usuarios_store', [UsuarioController::class, 'store'])->name('usuarios.store');
-Route::get('/usuarios_show/{id}', [UsuarioController::class, 'show'])->name('usuarios.show');
-Route::post('/usuarios_update', [UsuarioController::class, 'update'])->name('usuarios.update');
-Route::get('/usuarios_destroy/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy');
-
-
-
+Route::get('/usuario/{id}', [UsuarioController::class, 'edit'])->name('usuario_editar');
+Route::post('/usuario/update', [UsuarioController::class, 'update'])->name('usuario_update');
