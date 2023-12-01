@@ -1,7 +1,7 @@
 <x-layout.plantilla title="Editar usuario">
     <br />
-    <div class="container" style="align-items: center">
-        <div class="card" style="width: w-100;">
+    <div class="container" style="align-items: center; margin-left: 10%">
+        <div class="card" style="width: 80%;">
             <div class="card-header">
                 <h3>Actualiza la información de tu usuario</h3>
             </div>
@@ -10,6 +10,9 @@
                     @csrf
                     <input type="hidden" name="idUsuario" value="{{ $usuario['idUsuario'] }}">
                     <input type="hidden" name="idNegocio" value="{{ $usuario['idNegocio'] }}">
+                    <div style="margin-left: 45%">
+                        <img src="{{ asset('imagenes/profile.png') }}" alt="Icono"  width="100px" height="100px">
+                    </div>
                     <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" class="form-control" value="{{ $usuario['nombre'] }}" required />
                     <label for="apellidos">Apellidos:</label>

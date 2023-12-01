@@ -6,9 +6,53 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
-<body style="background-color: rgb(117, 117, 117)">
+<body style="background-color: rgba(240, 248, 255, 0.945)">
+    <div style="position: absolute" class="justify-content-center">
+        <br />
+        <br />
+        <br />
+        <br />
+        <div style="position: absolute">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img src="{{ asset('imagenes/reservify.png') }}" alt="Icono" class="text-center" width="200px" height="70px" style="margin-left: 425%; margin-bottom: 20px; border-radius: 60px">
+        </div>
+        <div style="margin-left: 50px; border-bottom: 2px solid gray">
+            <h1 style="padding: 20px"><b>¡Únete a miles de clientes que usan Resevify para reservar en restaurantes y otros comercios!</b></h1>
+        </div>
+    </div>
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <img src="{{ asset('imagenes/logo.jpg') }}" alt="Icono" class="text-center" width="350px" height="350px" style="margin-right: 50px; border-radius: 60px">
+        <img src="{{ asset('imagenes/login.png') }}" alt="Icono" class="text-center" width="450px" height="450px" style="margin-right: 10%; margin-bottom: 20px; border-radius: 60px">
 
         <div class="card p-4" style="width: 350px">
             @if ($mensaje = Session::get('error'))

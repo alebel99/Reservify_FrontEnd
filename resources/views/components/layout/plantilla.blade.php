@@ -17,11 +17,11 @@
         $usuario = session('usuario');
         $negocio = session('negocio')
     @endphp
-    <body style="background-color: rgb(117, 117, 117)">
+    <body style="background-color: rgb(240, 248, 255, 0.945)">
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ asset('imagenes/logo.jpg') }}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    <img src="{{ asset('imagenes/image.png') }}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                     Reservify
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,18 +33,18 @@
                             <a class="nav-link active" aria-current="page" href="{{ route('index_negocios') }}">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-success" href="{{ Route('usuario_editar', $usuario)}}">Mi usuario</a>
+                            <a class="nav-link" href="{{ Route('usuario_editar', $usuario)}}">Mi usuario</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-info" href="{{ Route('ver_citas_usuario', $usuario) }}">Mis citas</a>
+                            <a class="nav-link" href="{{ Route('ver_citas_usuario', $usuario) }}">Mis citas</a>
                         </li>
                         @if ($negocio == 0)
                             <li class="nav-item">
-                                <a class="nav-link text-success" href="{{ Route('negocios.create') }}">Crear negocio</a>
+                                <a class="nav-link" href="{{ Route('negocios.create') }}">Crear negocio</a>
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link text-warning" href="{{ route('citas_negocio', $negocio) }}">Mi negocio</a>
+                                <a class="nav-link" href="{{ route('citas_negocio', $negocio) }}">Mi negocio</a>
                             </li>
                         @endif
                     </ul>

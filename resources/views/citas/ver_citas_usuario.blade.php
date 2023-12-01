@@ -17,6 +17,9 @@
                 </div>
             </div>
             <h5 class="card-title">Citas del usuario</h5>
+            <div style="margin-left: 46%">
+                <img src="{{ asset('imagenes/dates.png') }}" alt="Icono"  width="150px" height="150px">
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -31,7 +34,7 @@
                 </thead>
                 <tbody>
                     @if (empty($citas))
-                        <tr><td colspan="7"><h3 class="text-center text-warning"><b>No tienes citas, ¡Agenda una!</b></h3></td></tr>
+                        <tr><td colspan="7"><h3 class="text-center"><b>No tienes citas, ¡Agenda una!</b></h3></td></tr>
                     @else
                         @foreach ($citas as $cita)
                             @php

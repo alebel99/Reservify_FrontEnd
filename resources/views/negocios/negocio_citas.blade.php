@@ -5,10 +5,8 @@
         $negocio = session('negocio');
     @endphp
 
-    <div class="card">
-        <div class="card-body text-center">
-            <a href="{{ Route('negocios.editar', $negocio) }}" class="btn btn-warning">Editar negocio</a>
-        </div>
+    <div style="text-align: right;">
+        <a href="{{ Route('negocios.editar', $negocio) }}" class="btn btn-warning">Editar negocio</a>
     </div>
 
     <br />
@@ -25,6 +23,9 @@
                 </div>
             </div>
             <h5 class="card-title">Citas de tu negocio</h5>
+            <div style="margin-left: 46%">
+                <img src="{{ asset('imagenes/business.png') }}" alt="Icono"  width="150px" height="150px">
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -36,7 +37,7 @@
                 </thead>
                 <tbody>
                     @if (empty($citas))
-                        <tr><td colspan="7"><h3 class="text-center text-warning"><b>No tienes citas en tu negocio</b></h3></td></tr>
+                        <tr><td colspan="7"><h3 class="text-center"><b>No tienes citas en tu negocio</b></h3></td></tr>
                     @else
                         @foreach ($citas as $cita)
                             @php

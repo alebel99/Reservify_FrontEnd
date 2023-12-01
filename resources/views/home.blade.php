@@ -1,4 +1,7 @@
 <x-layout.plantilla title="Inicio">
+    <br>
+    <img src="{{ asset('imagenes/banner.png') }}" alt="Icono"  width="100%" height="450px">
+    <br>
     <br />
     <div class="col-sm-12">
         @if ($mensaje = Session::get('success'))
@@ -25,7 +28,7 @@
 
         @foreach ($negocios as $negocio)
             <div class="col">
-                <div class="card h-100">
+                <div class="card h-100" style="border: 3px solid black">
                     <img src="{{ $negocio['foto'] }}" class="card-img-top" height="200">
                     <div class="card-body">
                         <h3 class="card-title">{{ $negocio['nombre'] }}</h3>
@@ -56,4 +59,5 @@
         @endforeach
 
     </div>
+    <br>
 </x-layout.plantilla>
