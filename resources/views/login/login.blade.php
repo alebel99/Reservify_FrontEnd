@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="mb-3 text-center">
-                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                    <button type="submit" class="btn btn-secondary">Iniciar sesión</button>
                 </div>
 
                 <div class="mb-3 text-center">

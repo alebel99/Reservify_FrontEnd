@@ -69,6 +69,10 @@ class UsuarioController extends Controller
     }
 
     public function update(Request $request){
+        if(empty($request->password)){
+            $request->password = "";
+        }
+
         $response = Http::put('http://www.reservify.somee.com/api/Usuario/editarUsuario', [
             'idUsuario' => $request->idUsuario,
             'idNegocio' => $request->idNegocio,
