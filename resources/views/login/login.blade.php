@@ -6,11 +6,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
-<body style="background-color: rgb(250, 225, 204)">
+<body style="background-color: rgb(117, 117, 117)">
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <img src="{{ asset('imagenes/logo_reservify.png') }}" alt="Icono" class="text-center" width="350px" height="350px" style="margin-right: 50px">
+        <img src="{{ asset('imagenes/logo.jpg') }}" alt="Icono" class="text-center" width="350px" height="350px" style="margin-right: 50px; border-radius: 60px">
 
-        <div class="card p-4">
+        <div class="card p-4" style="width: 350px">
             @if ($mensaje = Session::get('error'))
                 <div class="alert alert-danger" role="alert">
                     {{ $mensaje }}
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="mb-3 text-center">
-                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                    <button type="submit" class="btn btn-secondary">Iniciar sesión</button>
                 </div>
 
                 <div class="mb-3 text-center">

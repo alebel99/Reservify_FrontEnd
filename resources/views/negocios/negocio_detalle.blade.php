@@ -2,7 +2,7 @@
 
     <br />
     <div class="card" style="max-width: 100rem;">
-        <img src="{{ asset('imagenes/' . $negocio['foto']) }}" class="card-img-top" height="400">
+        <img src="{{ $negocio['foto'] }}" class="card-img-top" height="400">
         <div class="card-header">
             <br/>
             <h3 class="card-tittle">{{ $negocio['nombre'] }}</h3>

@@ -6,18 +6,27 @@
                 {{ $mensaje }}
             </div>
         @endif
+        @if ($mensaje = Session::get('successEdit'))
+            <div class="alert alert-warning" role="alert">
+                {{ $mensaje }}
+            </div>
+        @endif
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
     </div>
     <h1>Reservify - Reserva fácil</h1>
     <h3>Aquí podrás ver los negocios disponibles y agendar citas</h3>
     <br />
-
 
     <div class="row row-cols-1 row-cols-md-3 g-3">
 
         @foreach ($negocios as $negocio)
             <div class="col">
                 <div class="card h-100">
-                    <img src="{{ asset('imagenes/' . $negocio['foto']) }}" class="card-img-top" height="200">
+                    <img src="{{ $negocio['foto'] }}" class="card-img-top" height="200">
                     <div class="card-body">
                         <h3 class="card-title">{{ $negocio['nombre'] }}</h3>
                         <br />
